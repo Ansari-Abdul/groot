@@ -58,7 +58,7 @@ public class DataFitter {
         MnUserParameters upar = new MnUserParameters();
         for(int loop = 0; loop < npars; loop++){
             UserParameter par = funcFitter.getFunction().parameter(loop);
-            upar.add(par.name(),par.value(),0.0001);
+            upar.add(par.name(),par.value(),par.getStep);
             if(par.getStep()<0.0000000001){
                 upar.fix(par.name());
             }

@@ -49,10 +49,12 @@ public class Func1D implements IDataSet {
     
     public void addParameter(String name){
         this.userPars.getParameters().add(new UserParameter(name,0.0));
+        this.parameter( this.userPars.getParameters().size() - 1 ).setStep(0.0001);
     }
     
     public void addParameter(UserParameter par){
         this.userPars.getParameters().add(par);
+        this.parameter( this.userPars.getParameters().size() - 1 ).setStep(0.0001);
     }
     
     @Override
